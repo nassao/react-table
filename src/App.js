@@ -8,56 +8,39 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Titulo from './Titulo';
 
-// Seccion de postres
-
 /**
- * Crea un nuevo postre
- * @param {*} name 
- * @param {*} calories 
- * @param {*} fat 
- * @param {*} carbs 
- * @param {*} protein 
- * @returns 
+ * Esta función se utiliza para......
+ * @param {String} name
+ * @param {integer} calories
+ * @param {number} fat 
+ * @param {integer} carbs 
+ * @param {number} protein 
+ * @returns {Postre}
+ * @example
+ * createNewDessert('Frozen yoghurt', 159, 6.0, 24, 4.0)
  */
-function crdt(name, calories, fat, carbs, protein) {
+function createNewDessert(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
-
-// Seccion de numeros
-export const getRandom = () => Math.random() * 100;
-export const getSuma = (a, b) => a+b;
-export const modulo = (num, base) => num % base;
-
-/**
- * 
- * @returns {integer} 
- */
-export const rdm1a20 = () => Math.ceil(Math.random() * 20);
-
-// Seccion de postres
-
-/**
- * Lista de postres
- */
-const r = [
-  crdt('Chocolatina Hersheys', 180, 17.0, 40, 2.5),
-  crdt('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  crdt('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  crdt('Eclair', 262, 16.0, 24, 6.0),
-  crdt('Cupcake', 305, 3.7, 67, 4.3),
-  crdt('Gingerbread', 356, 16.0, 49, 3.9),
-  crdt('Torta', 200, 16.0, 49, 3.9),
-  crdt('Brazo de Reina', 400, 16.0, 49, 3.9),
-  crdt('Brownie', 123, 16.0, 49, 3.9),
-  crdt('Merengon', 400, 20.0, 100, 0.1),
-  crdt('Tiramisu', 518, 18.0, 50, 4.5),
-  crdt('Basbousa', 123, 16.0, 49, 3.9),
-  crdt('IslasFlotantes', 150, 15.0, 50, 3.9),
-  crdt('Manjar Blanco', 160, 16.0, 70, 5.6),
-  crdt('Cakepop', 10, 16.0, 10, 5.6),
-  crdt('Salami', 10, 16.0, 10, 5.6),
-  crdt('Arequipe', 120, 15.7, 23, 8.2),
+const dessertList = [
+  createNewDessert('Chocolatina Hersheys', 180, 17.0, 40, 2.5),
+  createNewDessert('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createNewDessert('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createNewDessert('Eclair', 262, 16.0, 24, 6.0),
+  createNewDessert('Cupcake', 305, 3.7, 67, 4.3),
+  createNewDessert('Gingerbread', 356, 16.0, 49, 3.9),
+  createNewDessert('Torta', 200, 16.0, 49, 3.9),
+  createNewDessert('Brazo de Reina', 400, 16.0, 49, 3.9),
+  createNewDessert('Brownie', 123, 16.0, 49, 3.9),
+  createNewDessert('Merengon', 400, 20.0, 100, 0.1),
+  createNewDessert('Tiramisu', 518, 18.0, 50, 4.5),
+  createNewDessert('Basbousa', 123, 16.0, 49, 3.9),
+  createNewDessert('IslasFlotantes', 150, 15.0, 50, 3.9),
+  createNewDessert('Manjar Blanco', 160, 16.0, 70, 5.6),
+  createNewDessert('Cakepop', 10, 16.0, 10, 5.6),
+  createNewDessert('Salami', 10, 16.0, 10, 5.6),
+  createNewDessert('Arequipe', 120, 15.7, 23, 8.2),
 ];
 
 export default function BasicTable() {
@@ -76,7 +59,7 @@ export default function BasicTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {r.map((row) => (
+            {dessertList.map((row) => (
               <TableRow
                 key={row.name}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

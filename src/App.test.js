@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import App, { getRandom, getSuma, modulo } from './App';
+import App from './App';
+import { getRandom, getAdd, getModulus, getRandomBetween1and20 } from './Numbers';
 
 test('Se renderiza la App', () => {
   render(<App />);
@@ -25,78 +26,82 @@ test('El título tiene TestID', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('Un postre es el Arequipe',() => {
-  render(<App/>);
+test('Un postre es el Arequipe', () => {
+  render(<App />);
   const linkElement = screen.getAllByText("Arequipe");
   expect(linkElement).toBeDefined();
 });
 
 // Matemáticas
 
-test('Randomizador retorna un número',() => {
+test('Randomizador retorna un número', () => {
   const random = getRandom();
   expect(random).toBeGreaterThanOrEqual(0);
 });
 
-test('Randomizador retorna un aleatorio',() => {
+test('Randomizador retorna un aleatorio', () => {
   const random1 = getRandom();
   const random2 = getRandom();
   expect(random1 === random2).toBeFalsy();
 });
 
-test('Se suman 2 numeros positivos',() => {
+test('Se suman 2 numeros positivos', () => {
   const numero1 = 1;
   const numero2 = 1;
-  expect((numero1+numero2) === getSuma(numero1,numero2)).toBeTruthy();
+  expect((numero1 + numero2) === getAdd(numero1, numero2)).toBeTruthy();
 });
 
-test('Se suman 2 numeros negativos',() => {
+test('Se suman 2 numeros negativos', () => {
   const numero1 = -1;
   const numero2 = -1;
-  expect((numero1+numero2) === getSuma(numero1,numero2)).toBeTruthy();
+  expect((numero1 + numero2) === getAdd(numero1, numero2)).toBeTruthy();
 });
 
-test('Se suman un numero negativo y un numero positivo',() => {
+test('Se suman un numero negativo y un numero positivo', () => {
   const numero1 = 1;
   const numero2 = -1;
-  expect((numero1+numero2) === getSuma(numero1,numero2)).toBeTruthy();
+  expect((numero1 + numero2) === getAdd(numero1, numero2)).toBeTruthy();
 });
 
-test('Se suman 2 numeros ceros',() => {
+test('Se suman 2 numeros ceros', () => {
   const numero1 = 0;
   const numero2 = 0;
-  expect((numero1+numero2) === getSuma(numero1,numero2)).toBeTruthy();
+  expect((numero1 + numero2) === getAdd(numero1, numero2)).toBeTruthy();
 });
 
 
-test('3 en módulo 2 es 1', ()=>{
+test('3 en módulo 2 es 1', () => {
   const numero = 3;
   const base = 2;
-  expect(modulo(numero,base) === 1).toBeTruthy();
+  expect(getModulus(numero, base) === 1).toBeTruthy();
 });
 
-test('2 en módulo 2 es 0', ()=>{
+test('2 en módulo 2 es 0', () => {
   const numero = 2;
   const base = 2;
-  expect(modulo(numero,base) === 0).toBeTruthy();
+  expect(getModulus(numero, base) === 0).toBeTruthy();
 });
 
-test('1 en módulo 2 es 1', ()=>{
+test('1 en módulo 2 es 1', () => {
   const numero = 1;
   const base = 2;
-  expect(modulo(numero,base) === 1).toBeTruthy();
+  expect(getModulus(numero, base) === 1).toBeTruthy();
 });
 
-test('5 en módulo 2 es 1', ()=>{
+test('5 en módulo 2 es 1', () => {
   const numero = 5;
   const base = 2;
-  expect(modulo(numero,base) === 1).toBeTruthy();
+  expect(getModulus(numero, base) === 1).toBeTruthy();
 });
 
-test('6 en módulo 2 es 0', ()=>{
+test('6 en módulo 2 es 0', () => {
   const numero = 6;
   const base = 2;
-  expect(modulo(numero,base) === 0).toBeTruthy();
+  expect(getModulus(numero, base) === 0).toBeTruthy();
 });
 
-// Unit Test para numeros aleatorios del 1 al 20
+test('Numero aleatorio entre 1 y 20', () => {
+  const numeroAleatorio = getRandomBetween1and20();
+  expect(numeroAleatorio).toBeGreaterThan(0);
+  expect(numeroAleatorio).toBeLessThanOrEqual(20);
+});

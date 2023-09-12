@@ -20,7 +20,8 @@ import Titulo from './Titulo';
  * createNewDessert('Frozen yoghurt', 159, 6.0, 24, 4.0)
  */
 function createNewDessert(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+  const x = { name, calories, fat, carbs, protein };
+  return x;
 }
 
 const dessertList = [

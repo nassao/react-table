@@ -12,9 +12,9 @@ import Titulo from './Titulo';
  * Esta función se utiliza para......
  * @param {String} name
  * @param {integer} calories
- * @param {number} fat 
- * @param {integer} carbs 
- * @param {number} protein 
+ * @param {number} fat
+ * @param {integer} carbs
+ * @param {number} protein
  * @returns {Postre}
  * @example
  * createNewDessert('Frozen yoghurt', 159, 6.0, 24, 4.0)
@@ -28,15 +28,6 @@ const dessertList = [
   createNewDessert('Chocolatina Hersheys', 180, 17.0, 40, 2.5),
   createNewDessert('Frozen yoghurt', 159, 6.0, 24, 4.0),
   createNewDessert('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createNewDessert('Eclair', 262, 16.0, 24, 6.0),
-  createNewDessert('Cupcake', 305, 3.7, 67, 4.3),
-  createNewDessert('Gingerbread', 356, 16.0, 49, 3.9),
-  createNewDessert('Torta', 200, 16.0, 49, 3.9),
-  createNewDessert('Brazo de Reina', 400, 16.0, 49, 3.9),
-  createNewDessert('Brownie', 123, 16.0, 49, 3.9),
-  createNewDessert('Merengon', 400, 20.0, 100, 0.1),
-  createNewDessert('Tiramisu', 518, 18.0, 50, 4.5),
-  createNewDessert('Basbousa', 123, 16.0, 49, 3.9),
   createNewDessert('IslasFlotantes', 150, 15.0, 50, 3.9),
   createNewDessert('Manjar Blanco', 160, 16.0, 70, 5.6),
   createNewDessert('Cakepop', 10, 16.0, 10, 5.6),
